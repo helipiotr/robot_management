@@ -9,16 +9,16 @@
 */
 
 class MobileSens: public MobileRobot{
-protected: 
+protected:
 	vector<double> sensors_;
 public:
 
 	//! MobileSens constructor
 	MobileSens();
-	
+
 	//! Reads data from sensor
 	double readSensor(int sensorID, double & readValue);
-	
+
 	//! Insertion operator
 	//friend std::ostream& operator << (std::ostream& os, const MobileSens& inMobileSens);
 

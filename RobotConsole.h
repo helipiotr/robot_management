@@ -5,6 +5,8 @@
 #include <string>
 #include "Robot.h"
 #include <vector>
+#include <fstream>
+#include <stdexcept>
 
 //!  Robot console class
 /*!
@@ -22,19 +24,36 @@ class RobotConsole{
 public:
 	//! Main constructor - running with false is possible but fairly pointless
 	RobotConsole(bool run = true): run_(run) {};
-	
+
 	//! function collecting data from the console
 	void getInput();
-	
+
 	//! Main function determining what to do with the input
 	void parseLine(std::string & inLine);
-	
-	//! Function adding a robot 
+
+	//! Function adding a robot
 	void addRobot(std::stringstream & ss);
-	
-	//! Shows robots and their state 
+
+	//! Shows robots and their state
 	void showRobots();
-	
+
+	//!Saves to disk
+	void saveRobots();
+
+	//! Retrives past state from disk to the programme
+	/*!
+		* Please remeber that IDs of the robots are changed if the current list is not empty
+	*/
+	void loadRobots();
+
+	//!Sets the motors
+	void parseSetMotor(std::stringstream & ss);
+
+	//!Sets the appropriate safety mode
+	void parseSafetyMode(std::stringstream & ss);
+
+	/*void displaySensors(std::stringstream & ss);*/
+
 	//! Destructor stopping and deleting approriate robot representations
 	/*!
 		* Note to self: no, you don't delete the robots physically,

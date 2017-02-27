@@ -40,6 +40,15 @@ public:
 	//! Extraction operator
 	friend std::istream& operator >> (std::istream& is, Manipulator& inManipulator);
 	
+	//!  Manipulator serialisation
+	/*!
+		Returns: safety mode, number of motors, value of each motor
+	*/
+	virtual std::ostream& get_state(std::ostream& os) const;
+	
+	//! Robot deserialisation
+	virtual std::istream& set_state(std::istream& is);  
+	
 };
 
 #endif /* MANIPULATOR_H */

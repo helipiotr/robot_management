@@ -1,0 +1,17 @@
+Robot management app. Available commands:
+
+exit - quits the application
+
+show - shows all robots present in the system
+
+save - saves the current state of all robots
+
+setMotor [robot ID | motor ID | value ] - sets the value of a motor
+
+setSafety [robot ID | "T1" or "T2" ] - sets the safety mode
+
+load - reads the robot table from "saved_robots" file
+
+add ["MobileRobot" or "Manipulator" or MobileSens] - adds appropriate robot type
+
+help - displays this help page
